@@ -1,0 +1,11 @@
+fever,cough,headache,sore_throat,body_pain,vomiting,diarrhea,runny_nose,fatigue,disease
+1,1,1,0,1,0,0,0,1,Flu
+1,1,0,1,0,0,0,1,0,Common Cold
+0,0,1,0,0,1,1,0,1,Food Poisoning
+1,0,1,0,1,1,0,0,1,Dengue
+0,0,0,1,0,0,0,1,0,Allergy
+1,1,1,0,1,0,0,0,1,Flu
+1,1,0,1,0,0,0,1,0,Common Cold
+0,0,1,0,0,1,1,0,1,Food Poisoning
+1,0,1,0,1,1,0,0,1,Dengue
+0,0,0,1,0,0,0,1,0,Allergy

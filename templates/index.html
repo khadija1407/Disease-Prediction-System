@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🩺 Disease Prediction System</h1>
+
+    <p class="subtitle">
+        AI Powered Healthcare Prediction
+    </p>
+
+    <form method="POST">
+
+        <div class="grid">
+
+            {% for symptom in symptoms %}
+
+            <label class="box">
+
+                <input type="checkbox" name="{{ symptom }}">
+
+                {{ symptom.replace("_"," ").title() }}
+
+            </label>
+
+            {% endfor %}
+
+        </div>
+
+        <button type="submit">🔍 Predict Disease</button>
+
+        <button type="reset" class="reset-btn">🔄 Reset</button>
+
+    </form>
+
+    {% if prediction %}
+
+    <div class="result">
+
+        <h2>🦠 Predicted Disease</h2>
+
+        <h1>{{ prediction }}</h1>
+
+        <h3>Prediction Confidence</h3>
+
+        <div class="progress">
+            <div class="bar" style="width: {{ confidence }}%;">
+                {{ confidence }}%
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>💊 Precautions</h3>
+            <p>{{ details.precaution }}</p>
+        </div>
+
+        <div class="card">
+            <h3>🍎 Recommended Diet</h3>
+            <p>{{ details.diet }}</p>
+        </div>
+
+        <div class="card">
+            <h3>👨‍⚕️ Doctor Advice</h3>
+            <p>{{ details.doctor }}</p>
+        </div>
+
+        <div class="card">
+            <h3>⚠ Disclaimer</h3>
+            <p>
+                This prediction is generated using a Machine Learning model and is intended only for educational purposes.
+                Please consult a qualified healthcare professional for an accurate medical diagnosis.
+            </p>
+        </div>
+
+    </div>
+
+    {% endif %}
+
+    <footer>
+        <hr>
+        <p>💙 Developed by <strong>Khadija Jamadar</strong></p>
+        <p>AI & Data Science Student | Disease Prediction System</p>
+    </footer>
+
+</div>
+
+</body>
+
+</html>
